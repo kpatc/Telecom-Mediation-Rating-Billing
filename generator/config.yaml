@@ -1,0 +1,22 @@
+# This is a sample configuration file for the CDR generator.
+# It defines the parameters for generating Call Detail Records (CDRs) with various anomalies.
+#Feel free to modify the values as per your requirements.
+data_generation:
+  num_records: 1000
+  output_mode: kafka         # json, csv, kafka
+  output_path: output
+  kafka_topic: cdr_topic
+  kafka_bootstrap_servers: localhost:9092
+
+service_distribution:
+  voice: 0.5
+  data: 0.3
+  sms: 0.2
+
+
+anomaly_rates:
+  missing_fields: 0.05
+  corrupted_data: 0.03
+  unknown_types: 0.01
+  duplicates: 0.02
+  out_of_order: 0.1

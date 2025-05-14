@@ -1,0 +1,9 @@
+pyspark
+kafka-python
+pandas
+matplotlib
+seaborn
+jupyter
+faker
+quixstrams
+dotenv

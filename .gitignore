@@ -1,0 +1,6 @@
+.env
+billing/invoices/
+generator/output/
+stream_mediation/.ipynb_checkpoints
+telecom_env/
+output/
