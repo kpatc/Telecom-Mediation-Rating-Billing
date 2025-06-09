@@ -111,13 +111,13 @@ This academic project simulates a complete telecom data pipeline using **Kafka**
 4. **Execute Rating Engine**
    ```bash
    cd rating
-   python rating_engine.py
+   spark-submit     --master local[*]     --driver-memory 4g     --executor-memory 2g     --conf spark.sql.adaptive.enabled=true     --conf spark.sql.adaptive.coalescePartitions.enabled=true     --conf spark.serializer=org.apache.spark.serializer.KryoSerializer     --packages org.postgresql:postgresql:42.3.1     rate_batch.py
    ```
 
 5. **Run Billing Engine**
    ```bash
    cd billing
-   python billing_engine.py
+   spark-submit     --master local[*]     --driver-memory 4g     --executor-memory 2g     --conf spark.sql.adaptive.enabled=true     --conf spark.sql.adaptive.coalescePartitions.enabled=true     --conf spark.serializer=org.apache.spark.serializer.KryoSerializer     --packages org.postgresql:postgresql:42.3.1    billing_engine.py
    ```
 
 6. **Launch Analytics Dashboard**
