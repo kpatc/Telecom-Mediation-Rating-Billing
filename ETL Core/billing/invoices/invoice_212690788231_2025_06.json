@@ -1,0 +1,29 @@
+{
+    "customer_id": "212690788231",
+    "rate_plan_id": "RP_BASIC",
+    "billing_period": "2025-06",
+    "usage_summary": {
+        "total_base_cost": 0.05,
+        "free_units_credit": 0.05,
+        "adjusted_usage_cost": 0
+    },
+    "free_units_details": {
+        "sms": {
+            "total_usage": 1,
+            "free_allowance": 50,
+            "free_used": 1,
+            "credit_applied": 0.05
+        }
+    },
+    "discounts": {
+        "loyalty_discount": 0.0,
+        "student_discount": 0,
+        "total_discounts": 0.0
+    },
+    "charges": {
+        "subtotal_after_discounts": 0,
+        "vat_20%": 0.0,
+        "regulatory_fee": 1.0,
+        "total_due": 1.0
+    }
+}

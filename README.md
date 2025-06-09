@@ -43,6 +43,99 @@ This academic project simulates a complete telecom data pipeline using **Kafka**
 - Plotly 📈 – advanced data visualization and interactive charts  
 - ReportLab 📄 – automated PDF invoice generation
 
+## 🚀 Getting Started
+
+### Prerequisites
+- Python 3.8+
+- PostgreSQL 12+
+- Apache Kafka 2.8+
+- Apache Spark 3.2+
+- Git
+
+### Installation & Setup
+
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/your-username/projet-telecom.git
+   cd projet-telecom
+   ```
+
+2. **Create and activate virtual environment**
+   ```bash
+   python -m venv telecom_env
+   source telecom_env/bin/activate  # On Windows: telecom_env\Scripts\activate
+   ```
+
+3. **Install dependencies**
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+4. **Database Setup**
+   ```bash
+   # Create PostgreSQL database and run schema
+   psql -U postgres -c "CREATE DATABASE telecom_db;"
+   psql -U postgres -d telecom_db -f Database/CreateSchema.sql
+   ```
+
+5. **Configure environment**
+   ```bash
+   cp .env.example .env
+   # Edit .env with your database credentials and Kafka settings
+   ```
+
+### Running the System
+
+1. **Start Kafka & Zookeeper**
+   ```bash
+   # Start Zookeeper
+   bin/zookeeper-server-start.sh config/zookeeper.properties
+   
+   # Start Kafka
+   bin/kafka-server-start.sh config/server.properties
+   ```
+
+2. **Generate synthetic data**
+   ```bash
+   cd generator
+   python cdr_generator.py
+   ```
+
+3. **Run Mediation Engine**
+   ```bash
+   cd stream_mediation
+   jupyter notebook streaming_mediation_notebook.ipynb
+   # Or run the Spark streaming job directly
+   ```
+
+4. **Execute Rating Engine**
+   ```bash
+   cd rating
+   python rating_engine.py
+   ```
+
+5. **Run Billing Engine**
+   ```bash
+   cd billing
+   python billing_engine.py
+   ```
+
+6. **Launch Analytics Dashboard**
+   ```bash
+   cd dashboard
+   streamlit run 01_Overview.py
+   ```
+   Access the dashboard at `http://localhost:8501`
+
+### Dashboard Features
+The Streamlit dashboard provides:
+- **Overview**: Real-time KPIs and system health metrics
+- **Revenue Analytics**: Interactive charts and trend analysis
+- **Customer Insights**: RFM segmentation and behavioral analytics
+- **Billing Management**: Invoice generation and PDF export capabilities
+
+Navigate between pages using the sidebar menu for comprehensive business intelligence insights.
+
 ---
 
 > This project embraces modularity, distributed processing, and Big Data principles to simulate how real telecom systems handle large-scale data pipelines.
