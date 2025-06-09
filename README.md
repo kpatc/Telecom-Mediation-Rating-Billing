@@ -43,10 +43,6 @@ This academic project simulates a complete telecom data pipeline using **Kafka**
 - Plotly 📈 – advanced data visualization and interactive charts  
 - ReportLab 📄 – automated PDF invoice generation
 
-## 🚧 Upcoming
-
-
-
 ---
 
 > This project embraces modularity, distributed processing, and Big Data principles to simulate how real telecom systems handle large-scale data pipelines.
