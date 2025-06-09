@@ -23,18 +23,29 @@ This academic project simulates a complete telecom data pipeline using **Kafka**
 - 🧾 **Billing Engine (Monthly Batch)**  
   Aggregates all rated events by customer and month, applies taxes (VAT), discounts, and fees to generate final invoice data (JSON output).
 
+- 📈 **Dashboard & Reporting Module**  
+  Comprehensive real-time business intelligence platform providing multi-dimensional insights into telecom operations. Features include:
+  - Interactive revenue analysis and trend visualization
+  - Advanced customer segmentation with RFM scoring
+  - Regional revenue breakdown and geographical insights
+  - Service-wise profitability and usage pattern analysis
+  - Drill-down capabilities and exportable reports (PDF invoices, CSV datasets)
+  - Responsive design for executive decision-making and operational oversight
+
 ## ⚙️ Tech Stack
 
 - Apache Kafka 🟠 – real-time message broker  
-- Apache Spark ⚡ – streaming data processing  
-- PostgreSQL 🐘 – persistent storage of normalized, rated, and billed data  
-- Python 🐍 – glue logic, batch processing, and data generation  
+- Apache Spark ⚡ – streaming data processing , and batch processing ,
+- PostgreSQL 🐘 – persistent storage of customers, product catalog, normalized, rated, and billed data  
+- Python 🐍 – glue logic, and data generation  
 - Faker – for generating synthetic telecom records  
+- Streamlit 🎯 – interactive web dashboard and business intelligence frontend
+- Plotly 📈 – advanced data visualization and interactive charts  
+- ReportLab 📄 – automated PDF invoice generation
 
 ## 🚧 Upcoming
 
-- 📈 **Dashboard & Reporting Module**  
-  Will provide insights into usage patterns, revenue, and system performance using modern data visualization tools (e.g., Superset, Metabase, or Dash).
+
 
 ---
 

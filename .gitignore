@@ -4,4 +4,4 @@ generator/output/
 stream_mediation/.ipynb_checkpoints
 telecom_env/
 output/
-.vscode/
+.vscode/stream_mediation/checkpoint_dir_kafka/

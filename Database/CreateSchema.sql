@@ -3,10 +3,10 @@ CREATE TABLE normalized_cdr (
     record_type TEXT,
     timestamp TIMESTAMP,
     msisdn TEXT,
-    peer_id TEXT,  -- Peut être NULL pour les enregistrements sans peer_id
-    duration_sec INT,  -- Peut être NULL pour les enregistrements "data" et "sms"
-    data_volume_mb FLOAT,  -- Peut être NULL pour les enregistrements "voice" et "sms"
-    session_duration_sec INT,  -- Peut être NULL pour les enregistrements "sms" et "voice"
+    peer_id TEXT,
+    duration_sec INT,
+    data_volume_mb FLOAT,
+    session_duration_sec INT,
     cell_id TEXT,
     technology TEXT,
     status TEXT,
@@ -16,7 +16,6 @@ CREATE TABLE normalized_cdr (
 -- rating_engine.sql
 -- 1. Création des tables pour la facturation (PostgreSQL)
 
--- Clients
 CREATE TABLE customers (
     customer_id VARCHAR PRIMARY KEY,
     customer_name VARCHAR,

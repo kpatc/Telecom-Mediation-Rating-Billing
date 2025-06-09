@@ -5,5 +5,11 @@ matplotlib
 seaborn
 jupyter
 faker
-quixstrams
 dotenv
+reportlab
+streamlit
+plotly
+psycopg2-binary
+python-dotenv
+seaborn
+numpy
