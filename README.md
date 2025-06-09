@@ -56,8 +56,8 @@ This academic project simulates a complete telecom data pipeline using **Kafka**
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/your-username/projet-telecom.git
-   cd projet-telecom
+   git clone https://github.com/kpatc/Telecom-Mediation-Rating-Billing.git
+   cd Telecom-Mediation-Rating-Billing
    ```
 
 2. **Create and activate virtual environment**
@@ -98,7 +98,7 @@ This academic project simulates a complete telecom data pipeline using **Kafka**
 2. **Generate synthetic data**
    ```bash
    cd generator
-   python cdr_generator.py
+   python generator.py
    ```
 
 3. **Run Mediation Engine**
@@ -123,7 +123,7 @@ This academic project simulates a complete telecom data pipeline using **Kafka**
 6. **Launch Analytics Dashboard**
    ```bash
    cd dashboard
-   streamlit run 01_Overview.py
+   streamlit run app.py
    ```
    Access the dashboard at `http://localhost:8501`
 
