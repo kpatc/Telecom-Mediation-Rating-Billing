@@ -413,7 +413,7 @@ def get_top_regions_performance():
     return df
 
 def get_all_invoices():
-    """Récupérer toutes les factures"""
+    """Récupérer toutes les factures avec les informations client enrichies"""
     try:
         conn = get_connection()
         if conn is None:
@@ -429,7 +429,10 @@ def get_all_invoices():
             i.total_discount,
             i.tax_applied,
             i.total_final_cost,
-            c.rate_plan_id
+            c.rate_plan_id,
+            c.region,
+            c.is_student,
+            c.activation_date
         FROM invoices i
         LEFT JOIN customers c ON i.customer_id = c.customer_id
         ORDER BY i.billing_period DESC, i.customer_id
@@ -440,6 +443,10 @@ def get_all_invoices():
         # Convertir billing_period en datetime si ce n'est pas déjà fait
         if not df.empty and 'billing_period' in df.columns:
             df['billing_period'] = pd.to_datetime(df['billing_period'])
+        
+        # Mapper les régions
+        if not df.empty and 'region' in df.columns:
+            df['region_mapped'] = df['region'].apply(map_city_to_region)
             
         return df
     except Exception as e:
